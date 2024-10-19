@@ -1,5 +1,6 @@
 package ru.dream.job.org.example.rental.dao;
-import ru.dream.job.org.example.rental.dao.model.Human;
+
+import ru.dream.job.org.example.rental.model.Human;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

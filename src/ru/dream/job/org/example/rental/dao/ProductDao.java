@@ -1,7 +1,10 @@
 package ru.dream.job.org.example.rental.dao;
-import ru.dream.job.org.example.rental.dao.model.Product;
+
+import ru.dream.job.constructorTask.product.Product;
+
 import java.util.ArrayList;
 import java.util.List;
+
 public class ProductDao implements Dao<Product> {
     private List<Product> products = new ArrayList<>();
 
