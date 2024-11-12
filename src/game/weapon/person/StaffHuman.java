@@ -1,7 +1,5 @@
 package game.weapon.person;
 
-
-
 public class StaffHuman implements Staff {
 
     @Override
