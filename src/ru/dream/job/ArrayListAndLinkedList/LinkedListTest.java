@@ -1,4 +1,4 @@
-package ru.dream.job.ArrayListAndLinkedList;;
+package ru.dream.job.ArrayListAndLinkedList;
 
 
 import org.junit.jupiter.api.*;
