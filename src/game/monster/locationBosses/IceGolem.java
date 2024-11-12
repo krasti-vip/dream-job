@@ -6,7 +6,7 @@ import game.weapon.monsters.locationBosses.IceStaff;
 public class IceGolem<T extends IceStaff> extends Monster<T> {
 
     public IceGolem(T weapon) {
-        super(weapon);
+        super(weapon, 250, 50, 70, 55, 100);
     }
 
     @Override

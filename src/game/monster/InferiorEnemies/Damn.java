@@ -6,7 +6,7 @@ import game.weapon.monsters.inferiorEnemies.Stick;
 public class Damn<T extends Stick> extends Monster<T> {
 
     public Damn(T weapon) {
-        super(weapon);
+        super(weapon, 30, 5, 7, 5, 10);
     }
 
     @Override

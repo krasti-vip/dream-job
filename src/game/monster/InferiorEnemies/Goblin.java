@@ -6,7 +6,7 @@ import game.weapon.monsters.inferiorEnemies.Stick;
 public class Goblin<T extends Stick> extends Monster<T> {
 
     public Goblin(T weapon) {
-        super(weapon);
+        super(weapon, 30, 5, 7, 5, 10);
     }
 
     @Override
