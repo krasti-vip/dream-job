@@ -1,7 +1,7 @@
 package game.monster.darkElves;
 
 import game.monster.Monster;
-import game.weapon.monsters.darkElves.BloodBow;
+import game.weapon.monstersWeapon.darkElves.BloodBow;
 
 public class QueenOfAzshara<T extends BloodBow> extends Monster<T> {
 

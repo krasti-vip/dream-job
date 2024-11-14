@@ -1,7 +1,7 @@
 package game.monster.locationBosses;
 
 import game.monster.Monster;
-import game.weapon.monsters.locationBosses.IceStaff;
+import game.weapon.monstersWeapon.locationBosses.IceStaff;
 
 public class IceGolem<T extends IceStaff> extends Monster<T> {
 
