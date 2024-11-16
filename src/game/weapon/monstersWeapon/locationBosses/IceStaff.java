@@ -1,4 +1,4 @@
-package game.weapon.monsters.locationBosses;
+package game.weapon.monstersWeapon.locationBosses;
 
 import game.weapon.Weapon;
 

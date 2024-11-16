@@ -1,4 +1,4 @@
-package game.weapon.monsters.darkElves;
+package game.weapon.monstersWeapon.darkElves;
 
 import game.weapon.Weapon;
 

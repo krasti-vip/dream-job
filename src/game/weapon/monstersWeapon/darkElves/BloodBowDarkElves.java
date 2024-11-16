@@ -1,4 +1,4 @@
-package game.weapon.monsters.darkElves;
+package game.weapon.monstersWeapon.darkElves;
 
 public class BloodBowDarkElves implements BloodBow {
 

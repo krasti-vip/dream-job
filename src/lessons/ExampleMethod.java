@@ -1,6 +1,5 @@
 package lessons;
 
-import lombok.val;
 
 public class ExampleMethod {
     public static void main(String[] args) {
@@ -27,7 +26,7 @@ public class ExampleMethod {
             return true;
         }
 
-        val res = new StringBuilder(str).reverse().toString().equalsIgnoreCase(str);
+        final var res = new StringBuilder(str).reverse().toString().equalsIgnoreCase(str);
 
         if (res) {
             System.out.println("Значение: " + str + " является палиндромом!");

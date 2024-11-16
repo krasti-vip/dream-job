@@ -1,4 +1,4 @@
-package game.weapon.monsters.inferiorEnemies;
+package game.weapon.monstersWeapon.inferiorEnemies;
 
 public class StickInferiorEnemies implements Stick {
 
