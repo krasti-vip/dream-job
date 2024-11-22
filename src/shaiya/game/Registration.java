@@ -69,22 +69,18 @@ public class Registration {
                                     if (userTarget2.equals("1")) {
                                         BowHuman bow = new BowHuman();
                                         hero = new Archer<>(bow);
-                                        System.out.println("Вы выбрали класс: Лучник");
 
                                     } else if (userTarget2.equals("2")) {
                                         StaffHuman staff = new StaffHuman();
                                         hero = new Mage<>(staff);
-                                        System.out.println("Вы выбрали класс: Маг");
 
                                     } else if (userTarget2.equals("3")) {
                                         DarkStaffNecromancer staff = new DarkStaffNecromancer();
                                         hero = new Necromancer<>(staff);
-                                        System.out.println("Вы выбрали класс: Некромант");
 
                                     } else if (userTarget2.equals("4")) {
                                         SwordHuman swordHuman = new SwordHuman();
                                         hero = new Warrior<>(swordHuman);
-                                        System.out.println("Вы выбрали класс: Воин");
 
                                     } else {
                                         System.out.println("Некорректный выбор класса героя. Пожалуйста, выберите снова.");
@@ -95,7 +91,7 @@ public class Registration {
                                 }
                             }
 
-                            System.out.println("Удачная регистрация, ваш ник в игре: " + userName + " его " + "класс " + hero);
+                            System.out.println("Регистрация завершена, ваш ник в игре: " + userName + " его " + "класс " + hero);
 
                             break;
                         }
@@ -112,7 +108,7 @@ public class Registration {
         return hero;
     }
 
-    private boolean userEnter(String sc, List<String> correctValues) {
+    public boolean userEnter(String sc, List<String> correctValues) {
         if (sc == null || sc.isEmpty()) {
             System.out.println("Ввод данных не удачен, введите корректное значение!!!");
             System.out.println("Вот такие: " + correctValues + " Тупица!!!!");

@@ -4,5 +4,5 @@ import shaiya.game.person.Hero;
 
 public interface Dungeon {
 
-    public void start(Hero<?> hero);
+    void start(Hero<?> hero);
 }

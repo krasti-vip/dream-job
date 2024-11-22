@@ -4,7 +4,7 @@ public class IceStaffBoss implements IceStaff {
 
     @Override
     public int getDamage() {
-        System.out.println("Ледяной шар!");
+        System.out.println("Монстр бьет ледяным шаром!");
         return 5;
     }
 }

@@ -37,7 +37,7 @@ public abstract class Monster<T extends Weapon> {
     public void attackDamage(Hero<?> hero) {
 
         if (missedAttack()) {
-            System.out.println("Промах!");
+            System.out.println("Монстр промахивается!");
             return;
         }
 

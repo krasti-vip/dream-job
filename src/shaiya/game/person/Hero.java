@@ -4,6 +4,9 @@ import lombok.Data;
 import shaiya.game.monster.Monster;
 import shaiya.game.weapon.Weapon;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 public abstract class Hero<T extends Weapon> {
 
@@ -23,6 +26,8 @@ public abstract class Hero<T extends Weapon> {
 
     private boolean alive = true;
 
+    private List<Integer> loot = new ArrayList<>();
+
     public Hero(T weapon, int hp, int mana, int power, int intelligence, int dexterity) {
         this.weapon = weapon;
         this.hp = hp;
@@ -32,8 +37,12 @@ public abstract class Hero<T extends Weapon> {
         this.dexterity = dexterity;
     }
 
+    public void addLoot(int item) {
+        loot.add(item);
+    }
+
     public void attack(Monster<?> monster) {
-        // Проверка на промах на основе ловкости
+
         if (missedAttack()) {
             System.out.println("Твой удар в молоко!");
 
