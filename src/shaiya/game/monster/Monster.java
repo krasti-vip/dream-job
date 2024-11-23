@@ -4,8 +4,6 @@ import lombok.Data;
 import shaiya.game.monster.darkElves.QueenOfAzshara;
 import shaiya.game.monster.locationBosses.Zuul;
 import shaiya.game.person.Hero;
-import shaiya.game.person.Mage;
-import shaiya.game.person.Necromancer;
 import shaiya.game.weapon.Weapon;
 
 @Data

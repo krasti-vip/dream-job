@@ -60,7 +60,7 @@ public class Registration {
                                         |3. Некромант (темное воплощение мага)                           |
                                         |4. Воин (обладает огромным запасом здоровья)                    | 
                                         |================================================================|               
-                                         """);
+                                        """);
 
                                 var userTarget2 = scanner.next();
                                 final var correctEnter2 = userEnter(userTarget, List.of("1", "2", "3", "4"));
@@ -120,6 +120,27 @@ public class Registration {
         }
         System.out.println("Как ты заебал!!!! подумай еще!!!!");
         return false;
+    }
+
+    public String checkingInputCorrectInPerpetualLoop(List<String> correctValues, Scanner scanner) {
+        if (scanner == null || correctValues == null) {
+            throw new NullPointerException();
+        }
+
+        var userTarget = scanner.next().toLowerCase();
+
+        while (!correctValues.contains(userTarget)) {
+            System.out.println("Ты ввел неверное значение куница!");
+            System.out.println("Доступные варрианты: ");
+
+            for (String correctValue : correctValues) {
+                System.out.println(correctValue);
+            }
+
+            userTarget = scanner.next().toLowerCase();
+        }
+
+        return userTarget;
     }
 
 

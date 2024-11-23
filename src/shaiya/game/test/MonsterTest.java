@@ -8,15 +8,9 @@ import shaiya.game.monster.darkElves.PrinceNuada;
 import shaiya.game.monster.darkElves.QueenOfAzshara;
 import shaiya.game.monster.locationBosses.IceGolem;
 import shaiya.game.monster.locationBosses.Zuul;
-import shaiya.game.person.Archer;
-import shaiya.game.person.Mage;
-import shaiya.game.person.Necromancer;
-import shaiya.game.person.Warrior;
-import shaiya.game.weapon.monstersWeapon.darkElves.BloodBow;
 import shaiya.game.weapon.monstersWeapon.darkElves.BloodBowDarkElves;
 import shaiya.game.weapon.monstersWeapon.inferiorEnemies.StickInferiorEnemies;
 import shaiya.game.weapon.monstersWeapon.locationBosses.IceStaffBoss;
-import shaiya.game.weapon.person.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -71,7 +65,7 @@ public class MonsterTest {
         assertEquals(30, damn.getHp());
         assertEquals(5, damn.getMana());
         assertEquals(7, damn.getPower());
-        assertEquals(5 , damn.getIntelligence());
+        assertEquals(5, damn.getIntelligence());
         assertEquals(10, damn.getDexterity());
 
         assertEquals(5, stickInferiorEnemies.getDamage());
@@ -101,7 +95,7 @@ public class MonsterTest {
         IceGolem iceGolem = new IceGolem<>(iceStaffBoss);
 
         assertEquals(250, iceGolem.getHp());
-        assertEquals(50, iceGolem.getMana() );
+        assertEquals(50, iceGolem.getMana());
         assertEquals(5, iceGolem.getPower());
         assertEquals(5, iceGolem.getIntelligence());
         assertEquals(10, iceGolem.getDexterity());
