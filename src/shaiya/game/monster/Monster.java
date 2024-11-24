@@ -1,26 +1,25 @@
 package shaiya.game.monster;
 
 import lombok.Data;
+import shaiya.game.inventory.Inventory;
+import shaiya.game.inventory.Lut;
 import shaiya.game.monster.darkElves.QueenOfAzshara;
 import shaiya.game.monster.locationBosses.Zuul;
 import shaiya.game.person.Hero;
 import shaiya.game.weapon.Weapon;
 
+import java.util.List;
+
 @Data
 public abstract class Monster<T extends Weapon> {
 
+    private final Inventory inventory;
     protected T weapon;
-
     private int hp;
-
     private int mana;
-
     private int power;
-
     private int intelligence;
-
     private int dexterity;
-
     private boolean alive = true;
 
     public Monster(T weapon, int hp, int mana, int power, int intelligence, int dexterity) {
@@ -30,6 +29,15 @@ public abstract class Monster<T extends Weapon> {
         this.power = power;
         this.intelligence = intelligence;
         this.dexterity = dexterity;
+        this.inventory = new Inventory();
+    }
+
+    public List<Lut> getLut() {
+        return inventory.getAllLut();
+    }
+
+    public void addLut(Lut lut) {
+        inventory.addLut(lut);
     }
 
     public void attackDamage(Hero<?> hero) {

@@ -1,32 +1,27 @@
 package shaiya.game.person;
 
 import lombok.Data;
+import shaiya.game.inventory.Inventory;
+import shaiya.game.inventory.Lut;
 import shaiya.game.monster.Monster;
 import shaiya.game.weapon.Weapon;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Data
 public abstract class Hero<T extends Weapon> {
 
+    private final Inventory inventory;
     protected T weapon;
-
     private int hp;
     /**
      * мана не реализована, будем ее использовать позже, для способностей или для оружия
      */
     private int mana;
-
     private int power;
-
     private int intelligence;
-
     private int dexterity;
-
     private boolean alive = true;
-
-    private List<Integer> loot = new ArrayList<>();
 
     public Hero(T weapon, int hp, int mana, int power, int intelligence, int dexterity) {
         this.weapon = weapon;
@@ -35,10 +30,15 @@ public abstract class Hero<T extends Weapon> {
         this.power = power;
         this.intelligence = intelligence;
         this.dexterity = dexterity;
+        this.inventory = new Inventory();
     }
 
-    public void addLoot(int item) {
-        loot.add(item);
+    public void addLoot(Lut lut) {
+        inventory.addLut(lut);
+    }
+
+    public Optional<Lut> getLut(String nameLoot) {
+        return inventory.getLut(nameLoot);
     }
 
     public void attack(Monster<?> monster) {
@@ -76,5 +76,9 @@ public abstract class Hero<T extends Weapon> {
         double missChance = Math.max(0.1, 1.0 - dexterity / 100.0);
 
         return Math.random() < missChance;
+    }
+
+    public void printInfoInventory() {
+        inventory.printInventory();
     }
 }

@@ -1,9 +1,9 @@
 package shaiya.game.Dungeon;
 
 import shaiya.game.Registration;
+import shaiya.game.inventory.Lut;
 import shaiya.game.monster.Monster;
 import shaiya.game.person.Hero;
-import shaiya.game.person.Lut;
 
 import java.util.List;
 import java.util.Scanner;
@@ -11,8 +11,6 @@ import java.util.Scanner;
 public class Room {
 
     private final Registration registration = new Registration();
-
-    private final Lut lut = new Lut();
 
     private final Scanner scanner = new Scanner(System.in);
 
@@ -49,8 +47,7 @@ public class Room {
                     hero.attack(monster);
 
                     if (!monster.isAlive()) {
-                        System.out.println("Получаем лут за монстра " + lut);
-                        hero.addLoot(lut.getBanka());
+                        retrieveLootWhenMonsterDies(hero, monster);
                         break;
                     }
 
@@ -62,24 +59,22 @@ public class Room {
                                 "монстра " + monster.getHp());
                         System.out.println("""
                                 1. Продолжить бой
-                                2. Восстановить здоровье банкой + 50 hp и продолжить бой
+                                2. Применить что нибудь, что у тебя есть!
                                 3. Сбежать
                                 """);
 
                         final String action = scanner.next();
 
                         if (action.equals("2")) {
-                            hero.setHp(hero.getHp() + 50);
-                            System.out.println("Твое здоровье " + hero.getHp());
-                            System.out.println("Продолжаем бой");
+                            applyInventory(hero);
                         } else if (action.equals("3")) {
                             System.out.println("Трусливая скотина, вернемся к началу подземелья!");
                             desireToRun = true;
                             break;
-                        } else if (!hero.isAlive()) {
-                            System.out.println("Game over! Ты побежден!");
-                            break;
                         }
+                    } else if (!hero.isAlive()) {
+                        System.out.println("Game over! Ты побежден!");
+                        break;
                     }
                 }
             } else if (target.equalsIgnoreCase("нет")) {
@@ -87,5 +82,28 @@ public class Room {
                 break;
             }
         }
+    }
+
+    private void retrieveLootWhenMonsterDies(Hero<?> hero, Monster<?> monster) {
+        List<Lut> monsterLut = monster.getLut();
+
+        if (monsterLut.size() > 0) {
+            System.out.println("Из монстра выпало: " + monsterLut);
+
+            for (Lut lut : monster.getLut()) {
+                hero.addLoot(lut);
+            }
+        } else {
+            System.out.println("В монстре не оказалось лута :с");
+        }
+    }
+
+    private void applyInventory(Hero<?> hero) {
+        hero.getInventory().printInventory();
+
+        String targetUserLoot = scanner.next();
+
+        hero.getLut(targetUserLoot)
+                .ifPresentOrElse(e -> e.apply(hero), () -> System.out.println("Нечего жрать, дерись!"));
     }
 }

@@ -13,10 +13,6 @@ import java.util.Scanner;
 
 public class Shaiya {
 
-    private final static Scanner scanner = new Scanner(System.in);
-
-    private final static Registration registration = new Registration();
-
     public final static AncientCatacombs ancientCatacombs = new AncientCatacombs(
             List.of(
                     new Room(
@@ -29,7 +25,6 @@ public class Shaiya {
                     )
             )
     );
-
     public final static String MAIN_MENU = """
             
                 Искатель приключений, выбери куда ты хочешь отправиться!
@@ -39,7 +34,8 @@ public class Shaiya {
                 3. Пойти в 'Древние катакомбы' и попытаться выжить при сражении с его обитателями
                 4. Не сохраниться и выйти.
             """;
-
+    private final static Scanner scanner = new Scanner(System.in);
+    private final static Registration registration = new Registration();
 
     public static void main(String[] args) {
         final Hero<?> hero = registration.registration();
