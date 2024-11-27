@@ -71,7 +71,6 @@ public abstract class Hero<T extends Weapon> {
         }
     }
 
-    // Метод, который рассчитывает шанс промаха
     private boolean missedAttack() {
         double missChance = Math.max(0.1, 1.0 - dexterity / 100.0);
 

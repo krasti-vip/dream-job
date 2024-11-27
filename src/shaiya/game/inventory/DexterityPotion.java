@@ -2,21 +2,22 @@ package shaiya.game.inventory;
 
 import shaiya.game.person.Hero;
 
-public class JarOfSap implements Lut {
+public class DexterityPotion implements Lut {
 
-    private final int countHp = 50;
+    private final int countDexterity = 50;
 
-    private final String uniqName = "Зелье_здоровья";
+    private final String uniqName = "Зелье_ловкости";
 
     private final String title = "Банка наполненная странной жидкостью, " +
-            "возможно восстановит тебе здоровье или добьет окончательно!";
+            "возможно она увеличит тебе ловкость!";
 
     private int count = 1;
 
     @Override
     public void apply(Hero<?> hero) {
-        hero.setHp(hero.getHp() + countHp);
+        hero.setDexterity(hero.getDexterity() + countDexterity);
         count--;
+
     }
 
     @Override
@@ -41,6 +42,6 @@ public class JarOfSap implements Lut {
 
     @Override
     public String toString() {
-        return "Зелье здоровья";
+        return "Зелье ловкости";
     }
 }

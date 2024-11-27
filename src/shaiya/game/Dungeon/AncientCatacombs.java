@@ -1,9 +1,7 @@
 package shaiya.game.Dungeon;
-
 import shaiya.game.Registration;
 import shaiya.game.Shaiya;
 import shaiya.game.person.Hero;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -38,10 +36,13 @@ public class AncientCatacombs implements Dungeon {
 
         if (target.equalsIgnoreCase("да")) {
             for (Room room : rooms) {
-                room.monsterBattlesLaunch(hero);
+                boolean continueExploring = room.monsterBattlesLaunch(hero);
+                if (!continueExploring || !hero.isAlive()) {
+                    break;
+                }
             }
         } else if (target.equalsIgnoreCase("нет")) {
-            System.out.println("Вышли из комнат!");
+            System.out.println("Вышли из подземелья!");
         }
     }
 }

@@ -2,20 +2,20 @@ package shaiya.game.inventory;
 
 import shaiya.game.person.Hero;
 
-public class JarOfSap implements Lut {
+public class PowerJar implements Lut {
 
-    private final int countHp = 50;
+    private final int countPower = 50;
 
-    private final String uniqName = "Зелье_здоровья";
+    private final String uniqName = "Зелье_силы";
 
-    private final String title = "Банка наполненная странной жидкостью, " +
-            "возможно восстановит тебе здоровье или добьет окончательно!";
+    private final String title = "Сосуд переливающейся на солнце с надпись:  " +
+            "эликсир большого бицепса!";
 
     private int count = 1;
 
     @Override
     public void apply(Hero<?> hero) {
-        hero.setHp(hero.getHp() + countHp);
+        hero.setPower(hero.getPower() + countPower);
         count--;
     }
 
@@ -41,6 +41,6 @@ public class JarOfSap implements Lut {
 
     @Override
     public String toString() {
-        return "Зелье здоровья";
+        return "Зелье силы";
     }
 }

@@ -1,30 +1,11 @@
 package shaiya.game;
-
-import shaiya.game.Dungeon.AncientCatacombs;
-import shaiya.game.Dungeon.Room;
-import shaiya.game.monster.InferiorEnemies.Damn;
-import shaiya.game.monster.locationBosses.IceGolem;
 import shaiya.game.person.Hero;
-import shaiya.game.weapon.monstersWeapon.inferiorEnemies.StickInferiorEnemies;
-import shaiya.game.weapon.monstersWeapon.locationBosses.IceStaffBoss;
-
-import java.util.List;
 import java.util.Scanner;
+
+import static shaiya.game.Dungeon.ListRoom.ancientCatacombs;
 
 public class Shaiya {
 
-    public final static AncientCatacombs ancientCatacombs = new AncientCatacombs(
-            List.of(
-                    new Room(
-                            List.of(
-                                    new Damn<>(new StickInferiorEnemies()),
-                                    new Damn<>(new StickInferiorEnemies()),
-                                    new IceGolem<>(new IceStaffBoss())
-
-                            ), "Ты попадаешь в зал наполненный кучей монстров! Пизда тебе!"
-                    )
-            )
-    );
     public final static String MAIN_MENU = """
             
                 Искатель приключений, выбери куда ты хочешь отправиться!
@@ -43,16 +24,16 @@ public class Shaiya {
         while (true) {
             System.out.println(MAIN_MENU);
 
-            final var target = scanner.nextInt();
+            final var target = scanner.next();
 
-            if (target == 1) {
+            if (target.equalsIgnoreCase("1")) {
                 System.out.println("При попытки пройти дальше, под вами ломается мост, Вы падаете в пропасть и погибаете" +
                         "игра завершена, пока, лох!");
-            } else if (target == 2) {
+            } else if (target.equalsIgnoreCase("2")) {
                 System.out.println("На Вас упал камень, Вас не откачали и Вы превратились в корм для червей, игра завершена");
-            } else if (target == 3) {
+            } else if (target.equalsIgnoreCase("3")) {
                 ancientCatacombs.start(hero);
-            } else if (target == 4) {
+            } else if (target.equalsIgnoreCase("4")) {
                 break;
             }
         }

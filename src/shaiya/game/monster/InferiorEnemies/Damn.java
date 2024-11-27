@@ -7,11 +7,11 @@ import shaiya.game.weapon.monstersWeapon.inferiorEnemies.Stick;
 public class Damn<T extends Stick> extends Monster<T> {
 
     public Damn(T weapon) {
-        super(weapon, 30, 5, 7, 5, 10);
+        super(weapon, 100, 5, 12, 5, 50);
 
         JarOfSap jarOfSap = new JarOfSap();
 
-        jarOfSap.setCount(99);
+        jarOfSap.setCount(1);
         addLut(jarOfSap);
     }
 
